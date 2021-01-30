@@ -1,34 +1,49 @@
 {% extends "base.html" %}
 
 {% block content %}
+<!-- Banner -->
+				<div id="banner-wrapper">
+					<div id="banner" class="box container">
+						<div class="row">
+							<div class="col-7 col-12-medium">
+								<h2>This is a Unique Book Store</h2>
+								<p>It's an easy Book exchange platform for all the ardent readers.</p>
+							</div>
+							<div class="col-5 col-12-medium">
+								
 <div class="row justify-content-center mt-5">
-    <div class="col-md-5">
-        <h2>Login</h2>
-    </div>
-</div>
-<div class="row justify-content-center mt-5">
-    <div class="col-md-5">
-        {% if error %}
-        <div class="alert alert-danger" role="alert">
-            {{ error }}
-        </div>
-        {% endif %}
-        <form method="POST">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" name="username" class="form-control" id="username">
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" name="password" class="form-control" id="password">
-            </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-        </form>
-        <hr>
-        <div class="text-center">
-            Need an account? <a href="{% url 'signupuser' %}">Sign Up here</a>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            <h2>Login</h2>
         </div>
     </div>
-</div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            {% if error %}
+            <div class="alert alert-danger" role="alert">
+                {{ error }}
+            </div>
+            {% endif %}
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" class="form-control" id="username">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" id="password">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+            <hr>
+            <div class="text-center">
+                Need an account? <a href="{% url 'signupuser' %}">Sign Up here</a>
+            </div>
+        </div>
+    </div>
 {% endblock %}
+							</div>
+						</div>
+					</div>
+				</div>
