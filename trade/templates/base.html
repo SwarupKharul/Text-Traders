@@ -6,6 +6,7 @@
     <title>Verti by HTML5 UP</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
     <link rel="stylesheet" href="{% static 'front/css/main.css' %}" />
 </head>
 
@@ -17,16 +18,19 @@
             <header id="header" class="container">
 
                 <!-- Logo -->
-                <div id="logo">
-                    <h1><a href="{% url 'home' %}">Text Traders</a></h1>
-                </div>
+                <a class="navbar-brand" href="{% url 'home' %}">
+                    <img src="{% static 'front/images/logo.jpg' %}" width="30" height="30"
+                        class="d-inline-block align-top">
+                    <span>Todo's</span>
+                </a>
 
                 <!-- Nav -->
                 <nav id="nav">
                     <ul>
                         <li class="current"><a href="{% url 'home' %}">Welcome</a></li>
-                        <li><a href="left-sidebar.html">Trending Books</a></li>
-                        <li><a href="no-sidebar.html">About Us</a></li>
+                        <li><a href="left-sidebar.html">Academic Books</a></li>
+                        <li><a href="left-sidebar.html">Non-Academic Books</a></li>
+                        <li><a href="#footer-wrapper">About Us</a></li>
                     </ul>
                 </nav>
 
@@ -43,13 +47,12 @@
 
                         <!-- Links -->
                         <section class="widget links">
-                            <h3>Random Stuff</h3>
+                            <h3>Swarup Kharul</h3>
                             <ul class="style2">
-                                <li><a href="#">Etiam feugiat condimentum</a></li>
-                                <li><a href="#">Aliquam imperdiet suscipit odio</a></li>
-                                <li><a href="#">Sed porttitor cras in erat nec</a></li>
-                                <li><a href="#">Felis varius pellentesque potenti</a></li>
-                                <li><a href="#">Nullam scelerisque blandit leo</a></li>
+                                <li>&emsp;<a href="#">VIT, Vellore</a></li>
+                                <li>&emsp;<a href="#">LinkedIn</a></li>
+                                <li>&emsp;<a href="#">GitHub</a></li>
+                                <li>&emsp;<a href="mailto:swarupkharulsk@gmail.com">Mail Me</a></li>
                             </ul>
                         </section>
 
@@ -58,13 +61,12 @@
 
                         <!-- Links -->
                         <section class="widget links">
-                            <h3>Random Stuff</h3>
+                            <h3>Sahil Kaling</h3>
                             <ul class="style2">
-                                <li><a href="#">Etiam feugiat condimentum</a></li>
-                                <li><a href="#">Aliquam imperdiet suscipit odio</a></li>
-                                <li><a href="#">Sed porttitor cras in erat nec</a></li>
-                                <li><a href="#">Felis varius pellentesque potenti</a></li>
-                                <li><a href="#">Nullam scelerisque blandit leo</a></li>
+                                <li>&emsp;<a href="#">VIT, Vellore</a></li>
+                                <li>&emsp;<a href="#">LinkedIn</a></li>
+                                <li>&emsp;<a href="#">GitHub</a></li>
+                                <li>&emsp;<a href="mailto:sahilkaling@gmail.com">Mail Me</a></li>
                             </ul>
                         </section>
 
@@ -73,13 +75,12 @@
 
                         <!-- Links -->
                         <section class="widget links">
-                            <h3>Random Stuff</h3>
+                            <h3>Ashish Kamathi</h3>
                             <ul class="style2">
-                                <li><a href="#">Etiam feugiat condimentum</a></li>
-                                <li><a href="#">Aliquam imperdiet suscipit odio</a></li>
-                                <li><a href="#">Sed porttitor cras in erat nec</a></li>
-                                <li><a href="#">Felis varius pellentesque potenti</a></li>
-                                <li><a href="#">Nullam scelerisque blandit leo</a></li>
+                                <li>&emsp;<a href="#">IIITD, Delhi</a></li>
+                                <li>&emsp;<a href="#">LinkedIn</a></li>
+                                <li>&emsp;<a href="#">GitHub</a></li>
+                                <li>&emsp;<a href="mailto:ashishkamathi@rocketmail.com">Mail Me</a></li>
                             </ul>
                         </section>
 
@@ -113,7 +114,7 @@
                         <div id="copyright">
                             <ul class="menu">
                                 <li>&copy; Untitled. All rights reserved</li>
-                                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                                <li>Design: HTML5 UP</li>
                             </ul>
                         </div>
                     </div>

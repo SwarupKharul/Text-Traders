@@ -1,4 +1,6 @@
 {% extends "base.html" %}
+{% load static %}
+
 
 {% block content %}
 <!-- Banner -->
@@ -24,15 +26,20 @@
 <!-- Features -->
 <div id="features-wrapper">
     <div class="container">
+        <div class="col-7 col-12-medium">
+            <center>
+                <h2>Three B's of our Project:</h2>
+            </center>
+        </div>
         <div class="row">
             <div class="col-4 col-12-medium">
-
                 <!-- Box -->
                 <section class="box feature">
-                    <a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+                    <a href="#" class="image featured" style="padding: 50px 100px 0px 100px;"><img
+                            src="{% static 'front/images/barter.png' %}" alt="" /></a>
                     <div class="inner">
                         <header>
-                            <h2>Put something here</h2>
+                            <h2>Barter</h2>
                             <p>Maybe here as well I think</p>
                         </header>
                         <p>Phasellus quam turpis, feugiat sit amet in, hendrerit in lectus. Praesent sed semper amet
@@ -45,10 +52,11 @@
 
                 <!-- Box -->
                 <section class="box feature">
-                    <a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+                    <a href="#" class="image featured" style="padding: 50px 100px 0px 100px;"><img
+                            src="{% static 'front/images/borrow.png' %}" height="100" /></a>
                     <div class="inner">
                         <header>
-                            <h2>An interesting title</h2>
+                            <h2>Borrow</h2>
                             <p>This is also an interesting subtitle</p>
                         </header>
                         <p>Phasellus quam turpis, feugiat sit amet in, hendrerit in lectus. Praesent sed semper amet
@@ -61,10 +69,11 @@
 
                 <!-- Box -->
                 <section class="box feature">
-                    <a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+                    <a href="#" class="image featured" style="padding: 50px 100px 0px 100px;"><img
+                            src="{% static 'front/images/buy.png' %}" alt="" /></a>
                     <div class="inner">
                         <header>
-                            <h2>Oh, and finally ...</h2>
+                            <h2>Buy</h2>
                             <p>Here's another intriguing subtitle</p>
                         </header>
                         <p>Phasellus quam turpis, feugiat sit amet in, hendrerit in lectus. Praesent sed semper amet

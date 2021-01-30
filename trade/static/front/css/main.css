@@ -8,7 +8,7 @@
 */
 
 html, body, div, span, applet, object,
-iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+iframe, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
 code, del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var, b,
@@ -130,12 +130,12 @@ input, select, textarea {
 			text-decoration: none;
 		}
 
-	h1, h2, h3, h4, h5, h6 {
+	h2, h3, h4, h5, h6 {
 		color: #444;
 		font-weight: 800;
 	}
 
-		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	h2 a, h3 a, h4 a, h5 a, h6 a {
 			color: inherit;
 			text-decoration: none;
 			outline: 0;
@@ -1933,31 +1933,9 @@ input, select, textarea {
 
 /* Logo */
 
-	#logo {
-		display: inline-block;
-	}
 
-		#logo h1 {
-			background: #ff4486;
-			color: #fff;
-			border-radius: 6px;
-			font-family: 'Oleo Script', serif;
-			font-weight: 400;
-			padding: 0.25em 0.2em 0.25em 0.2em;
-			font-size: 3.25em;
-			letter-spacing: 0.05em;
-			display: inline-block;
-			vertical-align: middle;
-		}
 
-		#logo span {
-			font-weight: 800;
-			line-height: 4.5em;
-			letter-spacing: 0.025em;
-			font-size: 0.9em;
-			vertical-align: middle;
-			margin: 0 0 0 1.25em;
-		}
+
 
 /* Nav */
 
@@ -2631,15 +2609,7 @@ input, select, textarea {
 
 		/* Logo */
 
-			#logo h1 {
-				font-size: 2.75em;
-				padding: 0.2em 0.275em;
-			}
-
-			#logo span {
-				line-height: 3em;
-			}
-
+		
 		/* Banner */
 
 			#banner {
