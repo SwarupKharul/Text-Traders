@@ -1,76 +1,138 @@
 {% load static %}
-<!doctype html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
-    <link rel="icon" type="image/png" href="#">
-    <title>Todo's</title>
+    <title>Verti by HTML5 UP</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="{% static 'front/css/main.css' %}" />
 </head>
 
-<body>
+<body class="is-preload homepage">
+    <div id="page-wrapper">
 
+        <!-- Header -->
+        <div id="header-wrapper">
+            <header id="header" class="container">
 
-    <nav class="navbar navbar-expand-xl navbar-light bg-warning">
-        <div class="container">
-            <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static 'todo/logo.png' %}" width="30" height="30" class="d-inline-block align-top">
-                <span>Todo's</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a href="#" onclick="$('#signOutBtn').click()" class="nav-link">Logout</a>
-                        <form style='display: none;' method="POST" action="{% url 'logoutuser' %}">
-                            {% csrf_token %}
-                            <button id="signOutBtn" type="submit">Logout</button>
-                        </form>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'signupuser' %}">Sign Up</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'loginuser' %}">Login</a>
-                    </li>
-                    {% endif %}
-                </ul>
-            </div>
+                <!-- Logo -->
+                <div id="logo">
+                    <h1><a href="{% url 'home' %}">Text Traders</a></h1>
+                </div>
+
+                <!-- Nav -->
+                <nav id="nav">
+                    <ul>
+                        <li class="current"><a href="{% url 'home' %}">Welcome</a></li>
+                        <li><a href="left-sidebar.html">Trending Books</a></li>
+                        <li><a href="right-sidebar.html">Join Us</a></li>
+                        <li><a href="no-sidebar.html">About Us</a></li>
+                    </ul>
+                </nav>
+
+            </header>
+        </div>
+        {% block content %}
+        {% endblock %}
+
+        <!-- Footer -->
+        <div id="footer-wrapper">
+            <footer id="footer" class="container">
+                <div class="row">
+                    <div class="col-3 col-6-medium col-12-small">
+
+                        <!-- Links -->
+                        <section class="widget links">
+                            <h3>Random Stuff</h3>
+                            <ul class="style2">
+                                <li><a href="#">Etiam feugiat condimentum</a></li>
+                                <li><a href="#">Aliquam imperdiet suscipit odio</a></li>
+                                <li><a href="#">Sed porttitor cras in erat nec</a></li>
+                                <li><a href="#">Felis varius pellentesque potenti</a></li>
+                                <li><a href="#">Nullam scelerisque blandit leo</a></li>
+                            </ul>
+                        </section>
+
+                    </div>
+                    <div class="col-3 col-6-medium col-12-small">
+
+                        <!-- Links -->
+                        <section class="widget links">
+                            <h3>Random Stuff</h3>
+                            <ul class="style2">
+                                <li><a href="#">Etiam feugiat condimentum</a></li>
+                                <li><a href="#">Aliquam imperdiet suscipit odio</a></li>
+                                <li><a href="#">Sed porttitor cras in erat nec</a></li>
+                                <li><a href="#">Felis varius pellentesque potenti</a></li>
+                                <li><a href="#">Nullam scelerisque blandit leo</a></li>
+                            </ul>
+                        </section>
+
+                    </div>
+                    <div class="col-3 col-6-medium col-12-small">
+
+                        <!-- Links -->
+                        <section class="widget links">
+                            <h3>Random Stuff</h3>
+                            <ul class="style2">
+                                <li><a href="#">Etiam feugiat condimentum</a></li>
+                                <li><a href="#">Aliquam imperdiet suscipit odio</a></li>
+                                <li><a href="#">Sed porttitor cras in erat nec</a></li>
+                                <li><a href="#">Felis varius pellentesque potenti</a></li>
+                                <li><a href="#">Nullam scelerisque blandit leo</a></li>
+                            </ul>
+                        </section>
+
+                    </div>
+                    <div class="col-3 col-6-medium col-12-small">
+
+                        <!-- Contact -->
+                        <section class="widget contact last">
+                            <h3>Contact Us</h3>
+                            <ul>
+                                <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a>
+                                </li>
+                                <li><a href="#" class="icon brands fa-facebook-f"><span
+                                            class="label">Facebook</span></a></li>
+                                <li><a href="#" class="icon brands fa-instagram"><span
+                                            class="label">Instagram</span></a></li>
+                                <li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a>
+                                </li>
+                                <li><a href="#" class="icon brands fa-pinterest"><span
+                                            class="label">Pinterest</span></a></li>
+                            </ul>
+                            <p>1234 Fictional Road<br />
+                                Nashville, TN 00000<br />
+                                (800) 555-0000</p>
+                        </section>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <div id="copyright">
+                            <ul class="menu">
+                                <li>&copy; Untitled. All rights reserved</li>
+                                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
 
-    </nav>
-
-    <div class="container">
-        {% block content %}{% endblock %}
-
     </div>
-    <footer>
-        <div align="right">&copy; Swarup Kharul__</div>
-    </footer>
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+    <!-- Scripts -->
+
+    <script src="{% static 'front/js/jquery.min.js' %}"></script>
+    <script src="{% static 'front/js/jquery.dropotron.min.js' %}"></script>
+    <script src="{% static 'front/js/browser.min.js' %}"></script>
+    <script src="{% static 'front/js/breakpoints.min.js' %}"></script>
+    <script src="{% static 'front/js/util.js' %}"></script>
+    <script src="{% static 'front/js/main.js' %}"></script>
+
 </body>
 
 </html>
