@@ -82,7 +82,7 @@ def nonacademic(request):
     return render(request, 'non-academic.html', {'books': books})
 
 def bookdetails(request, book_pk):
-    book = get_object_or_404(Books, pk=book_pk, user=request.user)
+    book = get_object_or_404(Books, pk=book_pk)
     form = BooksForm(instance=book)
     return render(request, 'bookdetails.html', {'book': book, 'form': form})
 
