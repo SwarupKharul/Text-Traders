@@ -77,3 +77,7 @@ def publishbook(request):
 def academic(request):
     books = Books.objects.filter(academic="academic")
     return render(request, 'academic.html', {'books': books})
+
+def nonacademic(request):
+    books = Books.objects.filter(academic="non-academic")
+    return render(request, 'non-academic.html', {'books': books})
