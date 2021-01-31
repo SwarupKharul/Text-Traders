@@ -13,11 +13,11 @@
                     </h5>
                     <h6>Rating:{{ b.author }}</h5>
                         <center>
-                            <a href="{% url 'userhome' %}">
-                                <button class="btn btn-primary" type="submit">
-                                    Details
-                                </button>
-                            </a>
+
+                            <button class="btn btn-primary" type="submit">
+                                <a href="{% url 'bookdetails' b.id %}"> Details</a>
+                            </button>
+
                         </center>
                 </div>
             </div>

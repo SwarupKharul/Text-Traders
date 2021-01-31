@@ -81,3 +81,8 @@ def academic(request):
 def nonacademic(request):
     books = Books.objects.filter(academic="non-academic")
     return render(request, 'non-academic.html', {'books': books})
+
+def bookdetails(request, book_pk):
+    book = get_object_or_404(Books, pk=book_pk, user=request.user)
+    form = BooksForm(instance=book)
+    return render(request, 'bookdetails.html', {'book': book, 'form': BooksForm()})

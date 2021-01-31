@@ -10,6 +10,7 @@ book_choices=(
 )
 
 class Books(models.Model):
+    objects = None
     bookname = models.CharField(max_length=100, null=True)
     author = models.CharField(max_length=100, default='Anonymous')
     description = models.TextField(null=True)

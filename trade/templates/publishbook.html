@@ -12,37 +12,51 @@
         <form method="POST">
             {% csrf_token %}
             <div class="banner">
-                <h1>New Book</h1>
+                <h1>
+                    <center>New Book</center>
+                </h1>
             </div>
             <div class="item">
-                <span>Book Name</span>
+                <h4>Book Name</h4>
                 <div class="name-item">
                     <input type="text" name="bookname" id="bookname" placeholder="bookname" required />
                     <input type="text" name="author" id="author" placeholder="author" required />
                 </div>
             </div>
+            <br>
             <div class=" contact-item">
                 <div class="item">
-                    <span>City</span>
+                    <h4>City</h4>
                     <input type="text" id="city" name="city" required />
                 </div>
             </div>
+            <br>
             <div class="item">
-                <span>Book Status</span>
+                <h4>Book Status</h4>
                 <input type="text" id="condition" name="condition" required />
             </div>
             <div class="item">
-                <label for="academic">Type of book:</label>
+                <h4 for="academic">Type of book:</h4>
                 <select name="academic" id="academic">
                     <option value="academic">Academic</option>
                     <option value="non-academic">Non-Academic</option>
                 </select>
             </div>
+            <br>
             <div class="item">
-                <span>Description</span>
+                <h4>Description</h4>
                 <textarea name="description" id="description" rows="3" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Publish</button>
+            <br>
+            <div class="item">
+                <h4 for="image1">Upload atleast 1 image:</h4><br>
+                <input type="file" id="image1" name="image1" required>
+                <input type="file" id="image2" name="image1">
+                <input type="file" id="image3" name="image1">
+                <input type="file" id="image4" name="image1">
+            </div>
+            <br>
+            <center><button type="submit" class="btn btn-primary">Publish</button></center>
         </form>
     </div>
 </body>

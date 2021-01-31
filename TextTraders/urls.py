@@ -33,5 +33,6 @@ urlpatterns = [
     path('publishbook/', views.publishbook, name='publishbook'),
     path('academic/', views.academic, name='academic'),
     path('non-academic/', views.nonacademic, name='non-academic'),
+    path('bookdetails/<int:book_pk>/',views.bookdetails, name='bookdetails'),
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
