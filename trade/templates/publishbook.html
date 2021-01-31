@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<body>
+    <div class="box container">
+        {% if error %}
+        <div class="alert alert-danger" role="alert">
+            {{ error }}
+        </div>
+        {% endif %}
+        <form method="POST">
+            {% csrf_token %}
+            <div class="banner">
+                <h1>New Book</h1>
+            </div>
+            <div class="item">
+                <span>Book Name</span>
+                <div class="name-item">
+                    <input type="text" name="bookname" id="bookname" placeholder="bookname" required />
+                    <input type="text" name="author" id="author" placeholder="author" required />
+                </div>
+            </div>
+            <div class=" contact-item">
+                <div class="item">
+                    <span>City</span>
+                    <input type="text" id="city" name="city" required />
+                </div>
+            </div>
+            <div class="item">
+                <span>Book Status</span>
+                <input type="text" id="condition" name="condition" required />
+            </div>
+            <div class="item">
+                <label for="academic">Type of book:</label>
+                <select name="academic" id="academic">
+                    <option value="academic">Academic</option>
+                    <option value="non-academic">Non-Academic</option>
+                </select>
+            </div>
+            <div class="item">
+                <span>Description</span>
+                <textarea name="description" id="description" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Publish</button>
+        </form>
+    </div>
+</body>
+
+{% endblock %}

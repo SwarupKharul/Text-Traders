@@ -3,6 +3,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
+from .Forms import BooksForm
+from .models import Books
 from django.utils import timezone
 
 # Create your views here.
@@ -57,3 +59,21 @@ def logoutuser(request):
 
 def userhome(request):
     return render(request, 'userhome.html')
+
+def publishbook(request):
+    if request.method == 'GET':
+        return render(request, 'publishbook.html', {'form': BooksForm()})
+    else:
+        try:
+            form = BooksForm(request.POST)
+            newbook = form.save(commit=False)
+            newbook.user = request.user
+            newbook.save()
+            return redirect('userhome')
+        except ValueError:
+            return render(request, 'publishbook.html',
+                          {'form': BooksForm(), 'error': 'Wrong data put in. Try Again'})
+
+def academic(request):
+    books = Books.objects.filter(academic="academic")
+    return render(request, 'academic.html', {'books': books})

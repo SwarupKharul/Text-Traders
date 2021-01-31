@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="row">
+    {% for b in books %}
+    <div class="col-lg-3 col-md-6 ">
+        <div class="card m-2">
+            <img class="card-img-top" src="{{ b.image1.url }}" alt="Movie image cap" height=300>
+            <div class="card-body">
+                <h5 class="card-title">{{ b.bookname }}
+                </h5>
+                <h6>Rating:{{ b.author }}</h5>
+                    <center>
+                        <form action="#">
+                            <button class="btn btn-primary" type="submit">
+                                Details
+                            </button>
+                        </form>
+                    </center>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
