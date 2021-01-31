@@ -86,3 +86,7 @@ def bookdetails(request, book_pk):
     book = get_object_or_404(Books, pk=book_pk, user=request.user)
     form = BooksForm(instance=book)
     return render(request, 'bookdetails.html', {'book': book, 'form': BooksForm()})
+
+def mybooks(request):
+    books = Books.objects.filter(user=request.user)
+    return render(request, 'mybooks.html', {'books': books})

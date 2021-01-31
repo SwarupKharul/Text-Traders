@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
     <link rel="stylesheet" href="{% static 'front/css/main.css' %}" />
+    <link rel="icon" type="image/png" href="{% static 'front/images/logo.jpg' %}">
+    <title>Text Traders</title>
 </head>
 
 <body class="is-preload homepage">
@@ -27,10 +29,23 @@
                 <!-- Nav -->
                 <nav id="nav">
                     <ul>
-                        <li class="current"><a href="{% url 'home' %}">Welcome</a></li>
+                        {% if user.is_authenticated %}
+
                         <li><a href="{% url 'academic' %}">Academic Books</a></li>
                         <li><a href="{% url 'non-academic' %}">Non-Academic Books</a></li>
-                        <li><a href="#footer-wrapper">About Us</a></li>
+                        <li><a href="{% url 'mybooks' %}">My Books</a></li>
+                        <li><a href="#" onclick="$('#signOutBtn').click()" class="nav-link">Logout</a>
+                            <form style='display: none;' method="POST" action="{% url 'logoutuser' %}">
+                                {% csrf_token %}
+                                <button id="signOutBtn" type="submit">Logout</button>
+                            </form>
+                        </li>
+
+                        {% else %}
+                        <li><a href="{% url 'academic' %}">Academic Books</a></li>
+                        <li><a href="{% url 'non-academic' %}">Non-Academic Books</a></li>
+                        <li><a href="#footer-wrapper">About</a></li>
+                        {% endif %}
                     </ul>
                 </nav>
 

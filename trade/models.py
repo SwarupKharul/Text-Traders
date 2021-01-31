@@ -20,8 +20,8 @@ class Books(models.Model):
     image2 = models.ImageField(upload_to='books/', blank=True)
     image3 = models.ImageField(upload_to='books/', blank=True)
     image4 = models.ImageField(upload_to='books/', blank=True)
-    #year = models.IntegerField(null=True)
     city = models.CharField(max_length=255, default='Pune')
+    contact = models.IntegerField(max_length=12,null=True)
     location = PlainLocationField(based_fields=['city'], zoom=7, default='Pune')
 
     user = models.ForeignKey(User, on_delete=models.CASCADE)

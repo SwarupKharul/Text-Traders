@@ -2,8 +2,11 @@
 {% load static %}
 
 {% block content %}
+<div class="col-sm-4 mb-4">
+    <input type="text" id="myFilter" class="form-control" onkeyup="myFunction()" placeholder="Search for card name...">
+</div>
 <div class="box container">
-    <div class="row">
+    <div class="row" id="bookname">
         {% for b in books %}
         <div class="col-lg-3 col-md-6 ">
             <div class="card m-2">
@@ -25,4 +28,21 @@
         {% endfor %}
     </div>
 </div>
+<script>
+    function myFunction() {
+        var input, filter, cards, cardContainer, title, i;
+        input = document.getElementById("myFilter");
+        filter = input.value.toUpperCase();
+        cardContainer = document.getElementById("bookname");
+        cards = cardContainer.getElementsByClassName("card");
+        for (i = 0; i < cards.length; i++) {
+            title = cards[i].querySelector(".card-title");
+            if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+                cards[i].style.display = "";
+            } else {
+                cards[i].style.display = "none";
+            }
+        }
+    }
+</script>
 {% endblock %}
