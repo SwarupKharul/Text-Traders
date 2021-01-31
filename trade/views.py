@@ -74,11 +74,11 @@ def publishbook(request):
                           {'form': BooksForm(), 'error': 'Wrong data put in. Try Again'})
 
 def academic(request):
-    books = Books.objects.filter(academic="academic")
+    books = Books.objects.filter(book_type="academic")
     return render(request, 'academic.html', {'books': books})
 
 def nonacademic(request):
-    books = Books.objects.filter(academic="non-academic")
+    books = Books.objects.filter(book_type="non-academic")
     return render(request, 'non-academic.html', {'books': books})
 
 def bookdetails(request, book_pk):
