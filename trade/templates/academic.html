@@ -11,13 +11,13 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ b.bookname }}
                     </h5>
-                    <h6>Rating:{{ b.author }}</h5>
+                    <h6>{{ b.author }}</h5>
                         <center>
-
-                            <button class="btn btn-primary" type="submit">
-                                <a href="{% url 'bookdetails' b.id %}"> Details</a>
-                            </button>
-
+                            <a href="{% url 'bookdetails' b.id %}">
+                                <button class="btn btn-primary" type="submit">
+                                    Details
+                                </button>
+                            </a>
                         </center>
                 </div>
             </div>

@@ -19,16 +19,17 @@
 
                 <!-- Logo -->
                 <span id="logo">
-                    <h1><a href="{% url 'home' %}"><img src="{% static 'front/images/logo.jpeg' %}" height="47" width="50"> Text Traders</a></h1>
-                 
+                    <h1><a href="{% url 'home' %}"><img src="{% static 'front/images/logo.jpg' %}" height="47"
+                                width="50"> Text Traders</a></h1>
+
                 </span>
-            
+
                 <!-- Nav -->
                 <nav id="nav">
                     <ul>
                         <li class="current"><a href="{% url 'home' %}">Welcome</a></li>
-                        <li><a href="left-sidebar.html">Academic Books</a></li>
-                        <li><a href="left-sidebar.html">Non-Academic Books</a></li>
+                        <li><a href="{% url 'academic' %}">Academic Books</a></li>
+                        <li><a href="{% url 'non-academic' %}">Non-Academic Books</a></li>
                         <li><a href="#footer-wrapper">About Us</a></li>
                     </ul>
                 </nav>
@@ -101,23 +102,23 @@
                                 <li><a href="#" class="icon brands fa-pinterest"><span
                                             class="label">Pinterest</span></a></li>
                             </ul>
-                            
+
                         </section>
 
                     </div>
                 </div>
-               
 
-    </div>
 
-    <!-- Scripts -->
+        </div>
 
-    <script src="{% static 'front/js/jquery.min.js' %}"></script>
-    <script src="{% static 'front/js/jquery.dropotron.min.js' %}"></script>
-    <script src="{% static 'front/js/browser.min.js' %}"></script>
-    <script src="{% static 'front/js/breakpoints.min.js' %}"></script>
-    <script src="{% static 'front/js/util.js' %}"></script>
-    <script src="{% static 'front/js/main.js' %}"></script>
+        <!-- Scripts -->
+
+        <script src="{% static 'front/js/jquery.min.js' %}"></script>
+        <script src="{% static 'front/js/jquery.dropotron.min.js' %}"></script>
+        <script src="{% static 'front/js/browser.min.js' %}"></script>
+        <script src="{% static 'front/js/breakpoints.min.js' %}"></script>
+        <script src="{% static 'front/js/util.js' %}"></script>
+        <script src="{% static 'front/js/main.js' %}"></script>
 
 </body>
 
