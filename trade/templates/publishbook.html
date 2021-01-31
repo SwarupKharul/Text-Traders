@@ -43,15 +43,11 @@
                 <input type="text" id="condition" name="condition" required />
             </div>
             <div class="item">
-                <style>
-                    input.largerCheckbox {
-                        width: 40px;
-                        height: 40px;
-                    }
-                </style>
-                <h4>Tick for academic books</h4>
-                <input type="checkbox" name="academic" class="largerCheckbox" id="academic">
-                <label class="form-check-label" for="academic">Academic</label>
+                <h4 for="academic">Type of book:</h4>
+                <select name="academic" id="academic">
+                    <option value="academic">Academic</option>
+                    <option value="non-academic">Non-Academic</option>
+                </select>
             </div>
             <br>
             <div class="item">
