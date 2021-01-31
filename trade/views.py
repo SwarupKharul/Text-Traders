@@ -19,16 +19,18 @@ def signupuser(request):
         # Create a new user
         if request.POST['password1'] == request.POST['password2']:
             try:
-                user = User.objects.create_user(request.POST['username'], password=request.POST['password1'], email=request.POST['email'])
                 email = request.POST['email'].lower()
                 r = User.objects.filter(email=email)
+                print(r)
                 if r.count():
                     return render(request, 'signupuser.html',
                                   {'error': 'Email already exists'})
                 else:
+                    user = User.objects.create_user(request.POST['username'], password=request.POST['password1'], email=request.POST['email'])
                     user.save()
                     login(request, user)
                     return redirect('userhome')
+
 
             except IntegrityError:
                 return render(request, 'signupuser.html',
@@ -50,15 +52,12 @@ def loginuser(request):
                           {'form': AuthenticationForm(), 'error': 'User password did not match'})
         else:
             login(request, user)
-            return redirect('userhome')
+            return redirect('mybooks')
 
 def logoutuser(request):
     if request.method == 'POST':
         logout(request)
         return redirect('home')
-
-def userhome(request):
-    return render(request, 'userhome.html')
 
 def publishbook(request):
     if request.method == 'GET':
@@ -69,7 +68,7 @@ def publishbook(request):
             newbook = form.save(commit=False)
             newbook.user = request.user
             newbook.save()
-            return redirect('userhome')
+            return redirect('mybooks')
         except ValueError:
             return render(request, 'publishbook.html',
                           {'form': BooksForm(), 'error': 'Wrong data put in. Try Again'})
@@ -85,7 +84,7 @@ def nonacademic(request):
 def bookdetails(request, book_pk):
     book = get_object_or_404(Books, pk=book_pk, user=request.user)
     form = BooksForm(instance=book)
-    return render(request, 'bookdetails.html', {'book': book, 'form': BooksForm()})
+    return render(request, 'bookdetails.html', {'book': book, 'form': form})
 
 def mybooks(request):
     books = Books.objects.filter(user=request.user)

@@ -4,9 +4,10 @@
 
 <body>
     <div class="box container">
-        {{ book.bookname }}
-        {{ book.author }}
-        {{ book.contact }}
+        <h2>Book : {{ book.bookname }}</h2>
+        <h2>Author : {{ book.author }}</h2>
+        <h3>Contact : <a style="text-decoration: underline; " href="https://wa.me/91{{ book.contact}}">Contact me to
+                read this book</a></h3>
     </div>
 </body>
 

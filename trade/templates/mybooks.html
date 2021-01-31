@@ -2,7 +2,16 @@
 {% load static %}
 
 {% block content %}
+
+
+
+<center>
+    <a href="{% url 'publishbook' %}"><button class="btn btn-primary">Add Book</button></a><br><br>
+</center>
 <div class="box container">
+    <center>
+        <h2>My published books</h2>
+    </center>
     <div class="row">
         {% for b in books %}
         <div class="col-lg-3 col-md-6 ">
@@ -11,7 +20,7 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ b.bookname }}
                     </h5>
-                    <h6>Rating:{{ b.author }}</h5>
+                    <h6>Author : {{ b.author }}</h5>
                         <center>
                             <a href="{% url 'bookdetails' b.id %}">
                                 <button class="btn btn-primary" type="submit">
