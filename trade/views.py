@@ -29,7 +29,7 @@ def signupuser(request):
                     user = User.objects.create_user(request.POST['username'], password=request.POST['password1'], email=request.POST['email'])
                     user.save()
                     login(request, user)
-                    return redirect('userhome')
+                    return redirect('mybooks')
 
 
             except IntegrityError:

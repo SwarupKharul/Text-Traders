@@ -29,7 +29,6 @@ urlpatterns = [
     path('login/', views.loginuser, name='loginuser'),
 
     # Books
-    path('userhome/', views.userhome, name='userhome'),
     path('publishbook/', views.publishbook, name='publishbook'),
     path('academic/', views.academic, name='academic'),
     path('non-academic/', views.nonacademic, name='non-academic'),
