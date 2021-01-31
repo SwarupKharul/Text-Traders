@@ -64,7 +64,7 @@ def publishbook(request):
         return render(request, 'publishbook.html', {'form': BooksForm()})
     else:
         try:
-            form = BooksForm(request.POST)
+            form = BooksForm(request.POST, request.FILES)
             newbook = form.save(commit=False)
             newbook.user = request.user
             newbook.save()

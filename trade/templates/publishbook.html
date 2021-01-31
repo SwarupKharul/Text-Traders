@@ -9,7 +9,7 @@
             {{ error }}
         </div>
         {% endif %}
-        <form method="POST">
+        <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="banner">
                 <h1>
@@ -57,10 +57,10 @@
             <br>
             <div class="item">
                 <h4 for="image1">Upload atleast 1 image:</h4><br>
-                <input type="file" id="image1" name="image1" accept="image/*" required>
-                <input type="file" id="image2" name="image1" accept="image/*">
-                <input type="file" id="image3" name="image1" accept="image/*">
-                <input type="file" id="image4" name="image1" accept="image/*">
+                <input type="file" id="image1" name="image1" required>
+                <input type="file" id="image2" name="image2" accept="image/*">
+                <input type="file" id="image3" name="image3" accept="image/*">
+                <input type="file" id="image4" name="image4" accept="image/*">
             </div>
             <br>
             <center><button type="submit" class="btn btn-primary">Publish</button></center>
